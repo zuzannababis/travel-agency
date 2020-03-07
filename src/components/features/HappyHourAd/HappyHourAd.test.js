@@ -27,6 +27,7 @@ describe('Component HappyHourAd', () => {
   it('should display title in the header', () => {
     const component = shallow(<HappyHourAd {...mockProps} />);
     expect(component.find(select.title).text()).toEqual(mockProps.title);
+    expect(component.find(select.description).text()).toBeTruthy;
   });
 });
 
@@ -77,6 +78,7 @@ const checkDescriptionAfterTime = (time, delaySeconds, expectedDescription) => {
   });
 };
 
+
 describe('Component HappyHourAd with mocked Date', () => {
   checkDescriptionAtTime('11:57:58', '122');
   checkDescriptionAtTime('11:59:59', '1');
@@ -85,6 +87,17 @@ describe('Component HappyHourAd with mocked Date', () => {
 
 describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('11:57:58', 2, '120');
-  checkDescriptionAfterTime('11:59:59', 1, '1');
+  checkDescriptionAfterTime('11:59:58', 1, '1');
   checkDescriptionAfterTime('13:00:00', 60 * 60, 22 * 60 * 60 + '');
+});
+
+describe('Component HappyHourAd with mocked Date', () => {
+  checkDescriptionAtTime('12:00:00', mockProps.description);
+  checkDescriptionAtTime('12:30:00', mockProps.description);
+  checkDescriptionAtTime('12:59:59', mockProps.description);
+});
+
+describe('Component HappyHourAd with mocked Date and delay', () => {
+  checkDescriptionAfterTime('11:59:58', 2, mockProps.description);
+  checkDescriptionAfterTime('12:30:00', 30 * 60, 23 * 60 * 60 + '');
 });
