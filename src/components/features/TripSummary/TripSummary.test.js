@@ -36,10 +36,9 @@ describe('Component TripSummary', () => {
     const expectedArray = ['one', 'two', 'three'];
 
     const component = shallow(<TripSummary tags={expectedArray} />);
-    console.log(component.find('.tag'));
-    expect(component.find('.tag').at(1)).toEqual(expectedArray[0]);
-    expect(component.find('.tag').at(2)).toEqual(expectedArray[1]);
-    expect(component.find('.tag').at(3)).toEqual(expectedArray[2]);
+    expect(component.find('.tag').at(0).text()).toEqual(expectedArray[0]);
+    expect(component.find('.tag').at(1).text()).toEqual(expectedArray[1]);
+    expect(component.find('.tag').at(2).text()).toEqual(expectedArray[2]);
   });
 
   it('should not render if tags array is missing or empty', () => {
