@@ -1,4 +1,5 @@
 import { formatTime } from './formatTime';
+//import { promoPrice } from './promoPrice';
 
 describe('utils', () => {
   describe('formatTime', () => {
@@ -19,6 +20,12 @@ describe('utils', () => {
       expect(formatTime(3793)).toBe('01:03:13');
       expect(formatTime(120)).toBe('00:02:00');
       expect(formatTime(3604)).toBe('01:00:04');
+    });
+  });
+  describe('promoPrice', () => {
+
+    it('should calculate 20% smaller price', () => {
+      expect(formatTime()).toBe(null);
     });
   });
 });
