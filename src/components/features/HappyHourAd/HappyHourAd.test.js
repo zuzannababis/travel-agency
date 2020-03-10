@@ -21,7 +21,6 @@ describe('Component HappyHourAd', () => {
   it('should render without crashing', () => {
     const component = shallow(<HappyHourAd />);
     expect(component).toBeTruthy();
-    //console.log(component.debug());
   });
   it('contains title and promoDescription', () => {
     const component = shallow(<HappyHourAd />);
