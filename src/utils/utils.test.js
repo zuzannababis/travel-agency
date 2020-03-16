@@ -1,5 +1,5 @@
 import { formatTime } from './formatTime';
-//import { promoPrice } from './promoPrice';
+import { promoPrice } from './promoPrice';
 
 describe('utils', () => {
   describe('formatTime', () => {
@@ -24,8 +24,9 @@ describe('utils', () => {
   });
   describe('promoPrice', () => {
 
-    it('should calculate 20% smaller price', () => {
-      expect(formatTime()).toBe(null);
+    it('should return discounted price', () => {
+      expect(promoPrice(51380.61, 20)).toBe('$41104.49');
+      expect(promoPrice(29318.86, 20)).toBe('$23455.09');
     });
   });
 });
