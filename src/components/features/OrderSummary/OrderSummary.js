@@ -8,7 +8,7 @@ import {promoPrice} from '../../../utils/promoPrice';
 const OrderSummary = ({cost, options}) => (
   <h2 className={styles.component}>
     Price from:
-    <strong> {formatPrice(promoPrice(cost, 20))}
+    <strong> ${formatPrice(promoPrice(cost, 20))}
     </strong>
     <div className={styles.price}>Standard price:
       <strong> ${calculateTotal(formatPrice(cost), options)}
