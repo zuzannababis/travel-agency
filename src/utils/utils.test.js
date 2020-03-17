@@ -25,8 +25,8 @@ describe('utils', () => {
   describe('promoPrice', () => {
 
     it('should return discounted price', () => {
-      expect(promoPrice(51380.61, 20)).toBe('$41104.49');
-      expect(promoPrice(29318.86, 20)).toBe('$23455.09');
+      expect(promoPrice(51380.61, 20)).toBe('41104.49');
+      expect(promoPrice(29318.86, 20)).toBe('23455.09');
     });
   });
 });
